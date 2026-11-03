@@ -43,6 +43,22 @@ nav.m a:hover{color:var(--or2)}
 .hero{padding:30px 0 36px}
 .herologo{display:block;width:min(260px,70%);height:auto;margin:0 0 14px;-webkit-mask-image:radial-gradient(ellipse 62% 60% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 62% 60% at 50% 50%,#000 70%,transparent 100%)}
 
+
+.scene{background:linear-gradient(#eef1f6,#fff);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.scene svg{display:block;width:100%;height:auto}
+.scene .cap{display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:#fff}
+.scene .cap span{font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--card);color:var(--mut);animation:chip 16s infinite}
+.scene .cap span:nth-child(2){animation-name:chip2}.scene .cap span:nth-child(3){animation-name:chip3}.scene .cap span:nth-child(4){animation-name:chip4}
+@keyframes chip{0%,29%{background:var(--or);color:#fff}31%,100%{background:var(--card);color:var(--mut)}}
+@keyframes chip2{0%,28%{background:var(--card);color:var(--mut)}30%,35%{background:var(--or);color:#fff}37%,100%{background:var(--card);color:var(--mut)}}
+@keyframes chip3{0%,35%{background:var(--card);color:var(--mut)}37%,62%{background:var(--or);color:#fff}64%,100%{background:var(--card);color:var(--mut)}}
+@keyframes chip4{0%,65%{background:var(--card);color:var(--mut)}67%,98%{background:var(--or);color:#fff}100%{background:var(--card);color:var(--mut)}}
+.hz2{animation:hzb 1s steps(1) infinite}@keyframes hzb{0%{opacity:1}50%{opacity:.1}}
+.ring{transform-box:fill-box;transform-origin:center;animation:ring 2s ease-out infinite}
+@keyframes ring{0%{opacity:.7;transform:scale(.4)}100%{opacity:0;transform:scale(1.6)}}
+.puff{transform-box:fill-box;transform-origin:center;opacity:0;animation:puff 2.4s ease-out infinite}
+@keyframes puff{0%{opacity:0;transform:translateY(0) scale(.6)}25%{opacity:.5}100%{opacity:0;transform:translateY(-26px) scale(1.8)}}
+@media(prefers-reduced-motion:reduce){.scene .cap span,.hz2,.ring,.puff{animation:none}}
 .strip{overflow:hidden;padding:10px 0;background:#13151a}
 .track{display:flex;gap:10px;width:max-content;animation:slide 60s linear infinite}
 .strip:hover .track{animation-play-state:paused}
